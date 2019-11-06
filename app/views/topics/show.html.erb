@@ -10,7 +10,7 @@
   <%= @topic.content %>
 </p>
 
-<%= render @post.comments %>
+<%= render @topic.comments %>
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>
