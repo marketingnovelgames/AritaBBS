@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_133055) do
+ActiveRecord::Schema.define(version: 2019_11_06_133211) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -43,11 +43,8 @@ ActiveRecord::Schema.define(version: 2019_11_06_133055) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+# Could not dump table "comments" because of following StandardError
+#   Unknown type 'reference' for column 'topic'
 
   create_table "topics", force: :cascade do |t|
     t.string "title"
