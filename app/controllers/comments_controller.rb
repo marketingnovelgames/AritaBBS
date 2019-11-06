@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
     before_action :set_topic
 
     def create
-        @comments = @topic.comments.build comments_params
+        @topic.comments.create! comments_params
+        redirect_to @topic
     end
 
     private
