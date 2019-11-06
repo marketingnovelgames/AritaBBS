@@ -12,7 +12,7 @@
 
 <%= render @topic.comments %>
 
-<%= render 'comments/new' %>
+<%= render 'comments/new', topic: @topic %>
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>
