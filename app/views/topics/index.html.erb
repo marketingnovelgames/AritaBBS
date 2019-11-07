@@ -2,6 +2,10 @@
 
 <h1>投稿一覧</h1>
 
+<div class="m-3">
+  <%= link_to '新規作成', new_topic_path, class: 'btn btn-success'%>
+</div>
+
 <div class="row">
   <% @topics.each do |topic| %>
     <div class="col-4 mt-2">
@@ -32,6 +36,3 @@
   </div>
 </div>
 
-<br>
-
-<%= link_to 'New Topic', new_topic_path %>
