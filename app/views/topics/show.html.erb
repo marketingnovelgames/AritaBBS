@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
+<div class="container">
+  <div class="display-4">
+    <%= @topic.title %>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @topic.content %>
-</p>
+  <div class="h3">
+    <%= @topic.content %>
+  </div>
 
-<%= render @topic.comments %>
+  <%= render @topic.comments %>
 
-<%= render 'comments/new', topic: @topic %>
+  <%= render 'comments/new', topic: @topic %>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+  <%= link_to 'Edit', edit_topic_path(@topic) %> |
+  <%= link_to 'Back', topics_path %>
+</div>
