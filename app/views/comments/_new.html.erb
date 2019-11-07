@@ -1,5 +1,8 @@
 <%= form_with(model: [ topic, Comment.new ], remote: true) do |form| %>
-    Your Comment:<br>
-    <%= form.rich_text_area :content%><br>
-    <%= form.submit %>
+    <div class="form-group">
+        <%= form.rich_text_area :content%>
+    </div>
+    <div class="form-group">
+        <%= form.submit class: "btn btn-success" %>
+    </div>
 <% end %> 
