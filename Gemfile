@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.7'
 # Using Kaminari
 gem 'kaminari'
 
+# Using Ransack
+gem 'ransack'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
