@@ -1,0 +1,67 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="title-tab" data-toggle="tab" href="#title" role="tab" aria-controls="title" aria-selected="true">投稿タイトル</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="content-tab" data-toggle="tab" href="#content" role="tab" aria-controls="content" aria-selected="false">投稿内容</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="false">コメント</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="title" role="tabpanel" aria-labelledby="title-tab">
+        <% @titles.each do |topic| %>
+            <div class="card">
+                <div class="card-header">
+                    <%= topic.title %>
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <div class="d-flex justify-content-start m-3">
+                            <%= truncate(strip_tags(topic.content.to_s), length: 50) %>
+                        </div>
+                        <div>
+                            <%= link_to "投稿を見る", topic_path(topic), class: "btn btn-success" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+    <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
+        <% @contents.each do |topic| %>
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-text">
+                        <div class="d-flex justify-content-start m-3">
+                            <%= truncate(strip_tags(topic.body.to_s), length: 50) %>
+                        </div>
+                        <div>
+                            <%= link_to "投稿を見る", topic_path(topic.record_id), class: "btn btn-success" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+    <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="comment-tab">
+        <% @comments.each do |comment| %>
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-text">
+                        <div class="d-flex justify-content-start m-3">
+                            <%= truncate(strip_tags(comment.content.to_s), length: 50) %>
+                        </div>
+                        <div>
+                            <%= link_to "投稿を見る", topic_path(comment.topic_id), class: "btn btn-success" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

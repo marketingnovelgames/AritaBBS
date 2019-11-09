@@ -2,4 +2,12 @@
   <a class="navbar-brand navbar-brand-light" href="#">
     Arita BBS
   </a>
+    <div class="d-flex align-content-center mt-2">
+      <%= form_with method: :get, url: search_path, local: true, class: "form-group mb-0" do |f| %>
+        <div class="d-flex flex-row bd-highlight mb-3">
+          <%= f.text_field :keyword, class: "form-control" %>
+          <%= f.submit class: "btn btn-success ml-2" %>
+        </div>
+      <% end %>
+    </div>
 </nav>
